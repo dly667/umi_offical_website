@@ -1,0 +1,4 @@
+*.txt
+test.txt
+bin/
+node_modules

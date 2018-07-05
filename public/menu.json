@@ -1,0 +1,22 @@
+[
+    {
+        "name":"首页",
+        "path":"/"
+    },
+    {
+        "name":"产品服务",
+        "path":"/product"
+    },
+    {
+        "name":"应用场景",
+        "path":"/application"
+    },
+    {
+        "name":"产品白皮书",
+        "path":"/white_book"
+    },
+    {
+        "name":"关于布比",
+        "path":"/about"
+    }
+]
