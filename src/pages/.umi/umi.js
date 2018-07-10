@@ -1,4 +1,4 @@
-import 'H:/umj_offical_website/src/global.js';
+import 'H:/umi_offical_website/src/global.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import createHistory from 'umi/_createHistory';
@@ -32,7 +32,7 @@ if (module.hot) {
   });
 }
 
-require('H:/umj_offical_website/src/global.less');
+require('H:/umi_offical_website/src/global.less');
 // Enable service worker
 if (process.env.NODE_ENV === 'production') {
   require('./registerServiceWorker');
