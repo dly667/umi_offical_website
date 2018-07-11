@@ -83,11 +83,11 @@ export default class Header extends React.Component {
                 imgList.push(<img onLoad={this.handleImageLoaded.bind(this)} id="bg_image" src={require("./../../public/images/about.png")} />);
                 classname = "header_about"; break;
         }
-        console.log(imgList)
+     
         return (
 
             <>
-                <div className={Styles[classname]} style={{ height: this.state.imageInfo.height }}>
+                <div className={Styles[classname]} style={{ height: this.state.imageInfo.height ,position: "relative"}}>
                     <div className={Styles.content}>
                         <div className={Styles.header}>
                             <Navbar location={pathname}></Navbar>

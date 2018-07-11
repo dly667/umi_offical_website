@@ -45,20 +45,27 @@
             this.ele.append('<span class="carousel-btn carousel-prev-btn"></span><span class="carousel-btn carousel-next-btn"></span>')
         },
         animate: function(t) {
+            console.log(t,1)
             var i = this,
             n = this.ele.find(".carousel-inner"),
-            e = this.ele.width(),
+            e = this.ele.width()
+            e = i.hasScrollbar()?e+17:e
+             
+            
             s = n.find(".carousel-item").length;
             this.opts.indicators;
-            console.log('animate:',n.position().left + t)
+            console.log(e);
+            console.log('animate:',n.position().left + t);
             n.stop(!0, !0).animate({
                 left: n.position().left + t
             },
             function() {
+                console.log(-e * (s - 2))
                 var o = n.position().left;
                 t < 0 && o < -e * (s - 2) && n.css("left", -e),
                 t > 0 && o > -e && n.css("left", -e * (s - 2)),
-                i.index = n.position().left / -e - 1,
+                i.index = n.position().left / -e -1
+                console.log(n.position().left / -e - 1)
                 i.opts.buttons && i.showBtn()
             })
         },
@@ -98,6 +105,9 @@
             function() {
                 i.loop()
             })
+        },
+        hasScrollbar:function() {    
+            return document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight);
         }
     },
     t.fn.FtCarousel = function(n) {

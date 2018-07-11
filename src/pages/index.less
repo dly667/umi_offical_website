@@ -1,0 +1,86 @@
+.net {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 835px;
+}
+
+p {
+    margin: 0
+}
+
+.digt_wallet {
+    width: 100%;
+    height: auto;
+    .background_01 {
+        background: url("./../../public/images/img05.png") no-repeat;
+        height: calc(100vw/1920*770);
+        background-size: 100% 100%;
+        display: flex;
+        align-items: center; // height: calc(100vh / 1920 * 230*2);
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                height: calc(100vw / 1920 * 230*2);
+                width: 230px;
+                width: calc(100vw / 1920 * 230);
+                background-color: rgba(0, 0, 0, 0.3);
+                margin: 0 10px;
+                color: #fff;
+                .hr {
+                    border-bottom: 2px solid #5853ce;
+                    width: calc(100vw / 1920 * 148);
+                    margin: calc(100vw / 1920 * 30) 0;
+                }
+                .big_font {
+                    font-size: 28px;
+                }
+                .english {
+                    font-size: 16px;
+                }
+                p {
+                    margin: 5px 0;
+                }
+                p.detail {
+                    display: none;
+                }
+                span {
+                    display: none;
+                }
+            }
+        }
+        li:hover {
+            background-color: #5853ce;
+            div.hr {
+                display: none;
+            }
+            .big_font {
+                margin-top: 25px;
+            }
+            .english {
+                margin-bottom: 15px;
+            }
+            p.detail {
+                font-size: 14px;
+                line-height: 28px;
+                letter-spacing: 2px;
+                display: block;
+                height: calc(100vw / 1920 * 100);
+                width: 200px;
+                height: 125px;
+            }
+            span {
+                display: block;
+                border: 1px solid #fff;
+                padding: 5px 30px;
+            }
+        }
+    }
+}
