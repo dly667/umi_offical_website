@@ -65,6 +65,7 @@ export default class Header extends React.Component {
         const { pathname } = this.props.location
         let classname
         let imgList = new Array()
+        console.log(pathname,)
         switch (pathname) {
             case '/':
 

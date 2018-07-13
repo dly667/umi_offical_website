@@ -1,0 +1,77 @@
+.footer {
+    height: calc(100vw/1920*532);
+    background-color: #2e2f31;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    .content {
+        width: 63.5%;
+        // background-color: royalblue;
+        height: calc(100vw/1920*532);
+        position: relative; // display: flex;
+        // justify-content: center;
+        // flex-direction: column;
+        .image_box {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            img {
+                height: 45px; // width: 180px
+            }
+            span{
+                font-size: 18px;
+            }
+        }
+        .book {
+            height: calc(100vw/1920*246);
+            display: flex;
+            justify-content: center;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-around;
+            color: #fff;
+            .item{
+                ul{
+                   
+                    li{
+                        margin: 10px 0;
+                    }
+                }
+            }
+            .book_hr {
+                width: calc(100vw/1920*30);
+                border-bottom: 1px solid #fff; // margin: auto;
+                margin: 12px 0 25px 0;
+            }
+            p {
+                font-size: 18px;
+            }
+            .qr {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                p {
+                    margin-top: 10px;
+                    font-size: 12px;
+                }
+            }
+        }
+        .hr {
+            width: calc(100vw/1920*896);
+            border-bottom: 1px solid #47484c;
+            margin: auto;
+        }
+        .copyright {
+            height: calc(100vw/1920*132);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            line-height: calc(100vw/1920*132);
+            color: #777;
+        }
+    }
+}

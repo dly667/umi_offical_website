@@ -6,7 +6,11 @@
 }
 
 p {
-    margin: 0
+    margin: 0;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
 }
 
 .digt_wallet {
@@ -82,5 +86,92 @@ p {
                 padding: 5px 30px;
             }
         }
+    }
+}
+
+.more_application_sense{
+    
+    .content{
+        img{
+            width: 100%
+        }
+        p{
+            display: flex;
+            justify-content: center;
+            
+            margin-top: calc(100vw/1920*64);
+            margin-bottom: calc(100vw/1920*92);
+            span{
+                width:calc(100vw/1920*184);
+                height: calc(100vw/1920*46);
+                // padding: 11px 23px;
+                border: 1px solid #5853ce;
+                font-size: 20px;
+                text-align: center;
+                line-height: 40px; 
+            }
+        }
+    }
+}
+
+.partner{
+    width: 63%;
+    margin: auto;
+    margin-top:60px;
+    img{
+        margin: auto;
+        display: block;
+    }
+    ul:nth-child(2){
+        display: flex;
+        flex-direction: column;
+        
+        .first_part,.second_part,.third_part{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            
+        }
+        li{
+            width: 288px;
+            height: 138px;
+            background-color: antiquewhite;
+            // margin-right:  10px;
+        }
+    }
+    .switch_btn{
+        height: 30px;
+        width: 44px;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        margin-top: 30px;
+        li{
+            width: 11px;
+            height: 11px;
+            border: 1px solid;
+            border-radius: 50%;
+            background-color: #777;
+            border-color: #777;
+        }
+        li.active{
+            background-color: #5853ce;
+            border-color: #5853ce;
+        }
+    }
+    
+
+}
+.news{
+    img{
+        margin: auto;
+        display: block;
+    }
+    margin-bottom: 180px;
+}
+.bottom_word{
+    img{
+        height: auto;
+        width: 100%;
     }
 }
