@@ -15,6 +15,7 @@ export default class Product extends React.Component {
         return (
             <>
                 <div className={Styles.product}>
+                    <div className={Styles.banner}><img src={require("./../../public/images/product_server_banner.png")}/></div>
                     <div className={Styles.ins_box}>
                         <div className={Styles.ins}>
                             <div className={Styles.title}>焕链区块链网络</div>

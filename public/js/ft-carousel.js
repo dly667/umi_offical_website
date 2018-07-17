@@ -49,12 +49,12 @@
             var i = this,
             n = this.ele.find(".carousel-inner"),
             e = this.ele.width()
-            e = i.hasScrollbar()?e+17:e
-             
+            // e = i.hasScrollbar()?e+17:e
+             console.log(e,177)
             
             s = n.find(".carousel-item").length;
             this.opts.indicators;
-            console.log(e);
+            console.log("position:",n.position().left);
             console.log('animate:',n.position().left + t);
             n.stop(!0, !0).animate({
                 left: n.position().left + t
@@ -85,6 +85,7 @@
             // e = this.ele.find(".carousel-next-btn"),
             s = this.ele.find(".carousel-indicators"),
             o = this.ele.width(),
+            
             a = (this.ele.find(".carousel-item").length, this.opts.auto);
             // e.on("click",
             // function() {
@@ -96,7 +97,8 @@
             // }),
             s.on("click", "span",
             function() {
-                console.log((t(this).data("index") - i.index) * -o)
+                console.log("o:",o)
+                console.log("t:",(i))
                 i.animate((t(this).data("index") - i.index) * -o)
             }),
             a && this.ele.hover(function() {
