@@ -2,14 +2,27 @@
     width: 100%;
     .banner {
         height: calc(100vw/1920*560);
-        .banner_about {
+        .banner_about_about {
             height: 100%;
-            background: url("./../../public/images/about_about.png");
+            background: url("./../../public/images/about_about_banner.png");
         }
-        .banner_contact {
+        .banner_about_contact {
             height: 100%;
-            background: url("./../../public/images/about_contact.png");
+            background: url("./../../public/images/about_contact_banner.png");
         }
+        .banner_about_dev_path {
+            height: 100%;
+            background: url("./../../public/images/about_dev_path_banner.png");
+        }
+        .banner_about_news {
+            height: 100%;
+            background: url("./../../public/images/about_news_banner.png");
+        }
+        .banner_about_join_us {
+            height: 100%;
+            background: url("./../../public/images/about_join_us.png");
+        }
+
     }
     .content {
         width: 63.5%;
@@ -151,18 +164,57 @@
         }
     }
     .about_news{
-        ul{
+        ul.news_list{
             li{
+         
                 display: flex;
-                justify-content: space-between;
-                .title_time{
+                justify-content: space-around;
+                
+                // margin-bottom: 22px;
+                border-bottom: 1px solid #666;
+                padding: 22px 0;
+                &>div{
                     display: flex;
-                    justify-content: space-between;
-                    line-height: 40px;
-                    span{
-                        vertical-align: bottom;
+                    justify-content: space-around;
+                    flex-direction: column;
+
+                    .title_time{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-end;
+                        line-height: 40px;
+                        color: #222222;
+                        h3{
+                            font-weight: normal;
+                            font-size: 24px;
+                            // margin-bottom: 43px;
+                        }
+                        span{
+                            vertical-align: bottom;
+                            padding-right: 22px;
+                        }
+                    }
+                    p{
+                        color: #666666;
+                        padding-right: 42px;
                     }
                 }
+              
+                img{
+                    height: 146px;
+                }
+            }
+            li:first-child{
+                margin-top: 62px;
+            }
+        }
+        .pagination_bar{
+            height: 210px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p{
+                margin-right: 37px;
             }
         }
     }

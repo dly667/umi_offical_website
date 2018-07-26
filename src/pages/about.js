@@ -17,7 +17,10 @@ export default class About extends React.Component {
                 active: 0
             },
             tab: {
-                active: 4
+                active: 0
+            },
+            about_banner: {
+                active: ''
             }
         }
     }
@@ -179,7 +182,7 @@ export default class About extends React.Component {
     }
     corporate_information = () => {
         return <div className={Styles.about_news}>
-            <ul>
+            <ul className={Styles.news_list}>
                 <li >
                     <div>
                         <div className={Styles.title_time}>
@@ -188,7 +191,7 @@ export default class About extends React.Component {
                         </div>
                         <p>新时代，新可能，这个春天，新时代扑面而来，伟大的征程你我同行，光荣的梦想有你有我，不断创新，不断前行布比区块链，与中信一起创造新可能</p>
                     </div>
-                    <img src={require("./../../public/images/about_news_list_01.png")}/>
+                    <img src={require("./../../public/images/about_news_list_01.png")} />
                 </li>
                 <li >
                     <div>
@@ -198,7 +201,7 @@ export default class About extends React.Component {
                         </div>
                         <p>新时代，新可能，这个春天，新时代扑面而来，伟大的征程你我同行，光荣的梦想有你有我，不断创新，不断前行布比区块链，与中信一起创造新可能</p>
                     </div>
-                    <img src={require("./../../public/images/about_news_list_01.png")}/>
+                    <img src={require("./../../public/images/about_news_list_01.png")} />
                 </li>
                 <li >
                     <div>
@@ -208,7 +211,7 @@ export default class About extends React.Component {
                         </div>
                         <p>新时代，新可能，这个春天，新时代扑面而来，伟大的征程你我同行，光荣的梦想有你有我，不断创新，不断前行布比区块链，与中信一起创造新可能</p>
                     </div>
-                    <img src={require("./../../public/images/about_news_list_01.png")}/>
+                    <img src={require("./../../public/images/about_news_list_01.png")} />
                 </li>
                 <li >
                     <div>
@@ -218,7 +221,7 @@ export default class About extends React.Component {
                         </div>
                         <p>新时代，新可能，这个春天，新时代扑面而来，伟大的征程你我同行，光荣的梦想有你有我，不断创新，不断前行布比区块链，与中信一起创造新可能</p>
                     </div>
-                    <img src={require("./../../public/images/about_news_list_01.png")}/>
+                    <img src={require("./../../public/images/about_news_list_01.png")} />
                 </li>
                 <li >
                     <div>
@@ -228,7 +231,7 @@ export default class About extends React.Component {
                         </div>
                         <p>新时代，新可能，这个春天，新时代扑面而来，伟大的征程你我同行，光荣的梦想有你有我，不断创新，不断前行布比区块链，与中信一起创造新可能</p>
                     </div>
-                    <img src={require("./../../public/images/about_news_list_01.png")}/>
+                    <img src={require("./../../public/images/about_news_list_01.png")} />
                 </li>
                 <li >
                     <div>
@@ -238,9 +241,23 @@ export default class About extends React.Component {
                         </div>
                         <p>新时代，新可能，这个春天，新时代扑面而来，伟大的征程你我同行，光荣的梦想有你有我，不断创新，不断前行布比区块链，与中信一起创造新可能</p>
                     </div>
-                    <img src={require("./../../public/images/about_news_list_01.png")}/>
+                    <img src={require("./../../public/images/about_news_list_01.png")} />
                 </li>
+
             </ul>
+            <div className={Styles.pagination_bar}>
+                <p>共20条记录</p>
+                <ul className="pagination">
+                    <li><a href="#">&laquo;</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&raquo;</a></li>
+                </ul>
+            </div>
+
         </div>
     }
     contentElement = () => {
@@ -249,20 +266,55 @@ export default class About extends React.Component {
         switch (index) {
 
             case 0:
+                this.about_banner = 'banner_about_join_us'
                 return this.about_us();
                 break;
             case 1:
+                this.about_banner = 'banner_about_dev_path'
                 return this.development_path();
                 break;
             case 2:
+                this.about_banner = 'banner_about_join_us'
                 return this.join_us();
                 break;
 
             case 3:
+                this.about_banner = 'banner_about_contact'
                 return this.contact();
                 break;
             case 4:
+                this.about_banner = 'banner_about_news'
                 return this.corporate_information();
+                break;
+        }
+
+    }
+
+    get_banner_class_name = ()=>{
+        const index = this.state.tab.active
+
+        switch (index) {
+
+            case 0:
+                
+                return 'banner_about_about';
+                break;
+            case 1:
+             
+                return 'banner_about_dev_path';
+                break;
+            case 2:
+        
+                return 'banner_about_join_us'
+                break;
+
+            case 3:
+               
+                return 'banner_about_contact'
+                break;
+            case 4:
+            
+                return  'banner_about_news'
                 break;
         }
 
@@ -274,7 +326,7 @@ export default class About extends React.Component {
             <>
                 <div className={Styles.about}>
                     <div className={Styles.banner}>
-                        <div className={Styles.banner_contact}>
+                        <div className={Styles[this.get_banner_class_name()]} >
 
                         </div>
                     </div>
