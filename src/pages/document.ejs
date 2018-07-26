@@ -11,10 +11,15 @@
     <!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"> -->
     <script src="./js/jquery.min.js"></script>
     <script src="./js/ft-carousel.js"></script>
+ 
+    <script src="https://webapi.amap.com/maps?v=1.4.8&key=f4e66292836f88b8608d5a8903a1c0ab"></script>
     <script type="text/javascript">
         window.jquery = $;
+        window.onload=function(){
+            window.AMap=AMap;
+        }
+   
     </script>
-    <script src="https://webapi.amap.com/maps?v=1.4.8&key=f4e66292836f88b8608d5a8903a1c0ab"></script>
     <title>
         <%= context.title %>
     </title>
