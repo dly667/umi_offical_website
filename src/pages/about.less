@@ -5,24 +5,28 @@
         .banner_about_about {
             height: 100%;
             background: url("./../../public/images/about_about_banner.png");
+            background-size: contain;
         }
         .banner_about_contact {
             height: 100%;
             background: url("./../../public/images/about_contact_banner.png");
+            background-size: contain;
         }
         .banner_about_dev_path {
             height: 100%;
             background: url("./../../public/images/about_dev_path_banner.png");
+            background-size: contain;
         }
         .banner_about_news {
             height: 100%;
             background: url("./../../public/images/about_news_banner.png");
+            background-size: contain;
         }
         .banner_about_join_us {
             height: 100%;
             background: url("./../../public/images/about_join_us.png");
+            background-size: contain;
         }
-
     }
     .content {
         width: 63.5%;
@@ -36,6 +40,7 @@
             li {
                 position: relative;
                 width: 217px;
+                width: calc(100vw/1920*217);
                 height: 58px;
                 margin-bottom: 36px;
                 background-color: #eee;
@@ -104,7 +109,7 @@
         ul.job_list {
             margin-top: 84px;
             li {
-                padding:  28px 42px;
+                padding: 28px 42px;
                 background-color: #f9f9f9;
                 display: flex;
                 justify-content: space-between;
@@ -113,15 +118,15 @@
                 display: flex;
                 font-size: 24px;
                 box-sizing: border-box;
-                div{
+                div {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
-                    p{
-                        span:first-child{
+                    p {
+                        span:first-child {
                             color: #8b8b8b;
                         }
-                        span{
+                        span {
                             color: #5853ce;
                         }
                     }
@@ -142,79 +147,109 @@
                     line-height: 73px;
                     background-color: #ffffff;
                     width: 198px;
+                    width: calc(100vw/1920*198);
                     height: 73px;
                     margin-right: 32px;
                     color: #8b8b8b;
                 }
             }
-            p{
+            p {
                 padding-top: 31px;
             }
-            .claim{
-                h3{
+            .claim {
+                h3 {
                     color: #595959;
                 }
-                ul{
-                    li{
+                ul {
+                    li {
                         line-height: 32px;
                     }
                 }
             }
-
         }
     }
-    .about_news{
-        ul.news_list{
-            li{
-         
-                display: flex;
-                justify-content: space-around;
-                
-                // margin-bottom: 22px;
-                border-bottom: 1px solid #666;
-                padding: 22px 0;
-                &>div{
-                    display: flex;
-                    justify-content: space-around;
-                    flex-direction: column;
-
-                    .title_time{
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: flex-end;
-                        line-height: 40px;
-                        color: #222222;
-                        h3{
-                            font-weight: normal;
-                            font-size: 24px;
-                            // margin-bottom: 43px;
-                        }
-                        span{
-                            vertical-align: bottom;
-                            padding-right: 22px;
-                        }
-                    }
-                    p{
-                        color: #666666;
-                        padding-right: 42px;
-                    }
-                }
-              
-                img{
-                    height: 146px;
+    .about_news {
+        ul.news_list {
+            a:first-child {
+                li {
+                    margin-top: 62px;
                 }
             }
-            li:first-child{
-                margin-top: 62px;
+            a {
+                li {
+                    display: flex;
+                    justify-content: space-around; // margin-bottom: 22px;
+                    border-bottom: 1px solid #666;
+                    padding: 22px 0;
+                    &>div {
+                        display: flex;
+                        justify-content: space-around;
+                        flex-direction: column;
+                        .title_time {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: flex-end;
+                            line-height: 40px;
+                            color: #222222;
+                            h3 {
+                                font-weight: normal;
+                                font-size: 24px; // margin-bottom: 43px;
+                            }
+                            span {
+                                vertical-align: bottom;
+                                padding-right: 22px;
+                            }
+                        }
+                        p {
+                            color: #666666;
+                            padding-right: 42px;
+                        }
+                    }
+                    img {
+                        height: 146px;
+                    }
+                }
             }
         }
-        .pagination_bar{
+        .pagination_bar {
             height: 210px;
             display: flex;
             justify-content: center;
             align-items: center;
-            p{
+            p {
                 margin-right: 37px;
+            }
+        }
+    }
+    .article_detail {
+        padding: 82px 0;
+        p.back {
+            height: 67px;
+            a {
+                font-size: 18px;
+                color: #5853ce;
+            }
+        }
+        h3 {
+            text-align: center;
+        }
+        div.date_time_author {
+            display: flex;
+            justify-content: center;
+            width: 30%;
+            margin: 43px auto;
+            span {
+                flex: 3;
+            }
+            span:last-child {
+                flex: 4;
+            }
+        }
+        div.context{
+            font-size: 16px;
+            p{
+                margin: 20px;
+                text-indent:1cm;
             }
         }
     }

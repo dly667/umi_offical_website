@@ -1,8 +1,11 @@
 import React from 'react'
+import Link from 'umi/link'
+import router from 'umi/router'
 import Styles from './about.less'
 import TabMenu from './../components/TabMenu'
 import { Map } from 'react-amap';
 import Amap from './../components/amap';
+import article from './../../public/article.json'
 const map_data = [
     { key: '0', ad: '杭州总部', lng: { center: [120.15507, 30.274084] } },
     { key: '1', ad: '北京', lng: { center: [116.407526, 39.90403] } },
@@ -23,9 +26,13 @@ export default class About extends React.Component {
                 active: ''
             }
         }
+
+
     }
+
+
     componentDidMount() {
-        // this.creatMap()
+
     }
     componentDidUpdate() {
         // this.creatMap()
@@ -39,16 +46,10 @@ export default class About extends React.Component {
             }
         })
     }
-    switchTab = (dataindex) => {
+    switchTab = (tabname) => {
 
-        this.setState({
-            map: {
-                active: 0
-            },
-            tab: {
-                active: dataindex
-            }
-        })
+
+        router.push('/about?tab=' + tabname);
 
     }
     contact = () => {
@@ -181,68 +182,30 @@ export default class About extends React.Component {
         </div>
     }
     corporate_information = () => {
+        const list = article.map((item) => {
+
+            const new_query = { ...this.props.location.query, detail_id: item.id }
+            const path = {
+                pathname: '',
+                query: new_query,
+            }
+            return <Link to={path}><li >
+                <div>
+                    <div className={Styles.title_time}>
+                        <h3>{item.title}</h3>
+                        <span>{item.dataTime.date}</span>
+                    </div>
+                    <p>{item.summary}</p>
+                </div>
+                <img src={require("./../../public/images/article/" + item.cover)} />
+            </li>
+            </Link>
+
+        })
+
         return <div className={Styles.about_news}>
             <ul className={Styles.news_list}>
-                <li >
-                    <div>
-                        <div className={Styles.title_time}>
-                            <h3>一起奋斗新时代 共同创造新可能 中信集团 & 布比区块链</h3>
-                            <span>2018-4-20</span>
-                        </div>
-                        <p>新时代，新可能，这个春天，新时代扑面而来，伟大的征程你我同行，光荣的梦想有你有我，不断创新，不断前行布比区块链，与中信一起创造新可能</p>
-                    </div>
-                    <img src={require("./../../public/images/about_news_list_01.png")} />
-                </li>
-                <li >
-                    <div>
-                        <div className={Styles.title_time}>
-                            <h3>一起奋斗新时代 共同创造新可能 中信集团 & 布比区块链</h3>
-                            <span>2018-4-20</span>
-                        </div>
-                        <p>新时代，新可能，这个春天，新时代扑面而来，伟大的征程你我同行，光荣的梦想有你有我，不断创新，不断前行布比区块链，与中信一起创造新可能</p>
-                    </div>
-                    <img src={require("./../../public/images/about_news_list_01.png")} />
-                </li>
-                <li >
-                    <div>
-                        <div className={Styles.title_time}>
-                            <h3>一起奋斗新时代 共同创造新可能 中信集团 & 布比区块链</h3>
-                            <span>2018-4-20</span>
-                        </div>
-                        <p>新时代，新可能，这个春天，新时代扑面而来，伟大的征程你我同行，光荣的梦想有你有我，不断创新，不断前行布比区块链，与中信一起创造新可能</p>
-                    </div>
-                    <img src={require("./../../public/images/about_news_list_01.png")} />
-                </li>
-                <li >
-                    <div>
-                        <div className={Styles.title_time}>
-                            <h3>一起奋斗新时代 共同创造新可能 中信集团 & 布比区块链</h3>
-                            <span>2018-4-20</span>
-                        </div>
-                        <p>新时代，新可能，这个春天，新时代扑面而来，伟大的征程你我同行，光荣的梦想有你有我，不断创新，不断前行布比区块链，与中信一起创造新可能</p>
-                    </div>
-                    <img src={require("./../../public/images/about_news_list_01.png")} />
-                </li>
-                <li >
-                    <div>
-                        <div className={Styles.title_time}>
-                            <h3>一起奋斗新时代 共同创造新可能 中信集团 & 布比区块链</h3>
-                            <span>2018-4-20</span>
-                        </div>
-                        <p>新时代，新可能，这个春天，新时代扑面而来，伟大的征程你我同行，光荣的梦想有你有我，不断创新，不断前行布比区块链，与中信一起创造新可能</p>
-                    </div>
-                    <img src={require("./../../public/images/about_news_list_01.png")} />
-                </li>
-                <li >
-                    <div>
-                        <div className={Styles.title_time}>
-                            <h3>一起奋斗新时代 共同创造新可能 中信集团 & 布比区块链</h3>
-                            <span>2018-4-20</span>
-                        </div>
-                        <p>新时代，新可能，这个春天，新时代扑面而来，伟大的征程你我同行，光荣的梦想有你有我，不断创新，不断前行布比区块链，与中信一起创造新可能</p>
-                    </div>
-                    <img src={require("./../../public/images/about_news_list_01.png")} />
-                </li>
+                {list}
 
             </ul>
             <div className={Styles.pagination_bar}>
@@ -260,61 +223,81 @@ export default class About extends React.Component {
 
         </div>
     }
+    article = (detail_id) => {
+        const article_detail = article[detail_id - 1]
+        // console.log(article[detail_id-1])
+
+        return <div className={Styles.article_detail}>
+            <p className={Styles.back}>
+                <Link to="?tab=conp_news">返回企业资讯</Link>
+
+            </p>
+            <h3>{article_detail.title}</h3>
+            <div className={Styles.date_time_author}>
+                <span>{article_detail.dataTime.date}</span>
+                <span>{article_detail.dataTime.time}</span>
+                <span>发布者：{article_detail.author}</span>
+            </div>
+            <div dangerouslySetInnerHTML={{ __html: article_detail.content }} className={Styles.context}></div>
+        </div>
+    }
     contentElement = () => {
-        const index = this.state.tab.active
+        const query = this.props.location.query
 
-        switch (index) {
+        switch (query.tab) {
 
-            case 0:
+            case 'about_us':
                 this.about_banner = 'banner_about_join_us'
                 return this.about_us();
                 break;
-            case 1:
+            case 'dev_path':
                 this.about_banner = 'banner_about_dev_path'
                 return this.development_path();
                 break;
-            case 2:
+            case 'join_us':
                 this.about_banner = 'banner_about_join_us'
                 return this.join_us();
                 break;
 
-            case 3:
+            case 'contact_us':
                 this.about_banner = 'banner_about_contact'
                 return this.contact();
                 break;
-            case 4:
+            case 'conp_news':
+
                 this.about_banner = 'banner_about_news'
-                return this.corporate_information();
+                if (query.detail_id) {
+                    return this.article(query.detail_id)
+                } else {
+                    return this.corporate_information();
+
+                }
                 break;
         }
 
     }
 
-    get_banner_class_name = ()=>{
-        const index = this.state.tab.active
+    get_banner_class_name = () => {
+        const query = this.props.location.query
 
-        switch (index) {
+        switch (query.tab) {
 
-            case 0:
-                
+            case 'about_us':
                 return 'banner_about_about';
                 break;
-            case 1:
-             
+            case 'dev_path':
                 return 'banner_about_dev_path';
                 break;
-            case 2:
-        
+            case 'join_us':
                 return 'banner_about_join_us'
                 break;
 
-            case 3:
-               
+            case 'contact_us':
                 return 'banner_about_contact'
                 break;
-            case 4:
-            
-                return  'banner_about_news'
+            case 'conp_news':
+
+                return 'banner_about_news'
                 break;
         }
 
@@ -322,6 +305,9 @@ export default class About extends React.Component {
 
     render() {
 
+        if (!this.props.location.query.tab) {
+            router.push('?tab=about_us')
+        }
         return (
             <>
                 <div className={Styles.about}>
@@ -331,7 +317,7 @@ export default class About extends React.Component {
                         </div>
                     </div>
                     <div className={Styles.content}>
-                        <TabMenu switchTab={this.switchTab} activeTab={this.state.tab.active} />
+                        <TabMenu switchTab={this.switchTab} activeTab={this.props.location.query.tab} />
                         {this.contentElement()}
                     </div>
                 </div>
