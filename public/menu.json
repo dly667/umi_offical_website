@@ -1,22 +1,77 @@
 [
     {
         "name":"首页",
-        "path":"/"
+        "path":"/",
+        "child":[
+            
+        ]
     },
     {
         "name":"产品服务",
-        "path":"/product"
+        "path":"/product",
+        "child":[
+            
+        ]
     },
     {
         "name":"应用场景",
-        "path":"/application"
+        "path":"/application",
+        "child":[
+            {
+                "name":"数字资产",
+                "path":"/digital_assets"
+            },
+            {
+                "name":"股权债券",
+                "path":"/equity_bond"
+            },
+            {
+                "name":"供应链金融",
+                "path":"/supply_chain_finance"
+            },
+            {
+                "name":"公示公证",
+                "path":"/notarization"
+            },
+            {
+                "name":"供应链溯源",
+                "path":"/supply_chain_traceability"
+            }
+        ]
+
+        
     },
     {
         "name":"产品白皮书",
-        "path":"/white_book"
+        "path":"/white_book",
+        "child":[
+            
+        ]
     },
     {
-        "name":"关于布比",
-        "path":"/about"
+        "name":"关于焕链",
+        "path":"/about",
+        "child":[
+            {
+                "name":"关于我们",
+                "path":"/about?tab=about_us"
+            },
+            {
+                "name":"发展历程",
+                "path":"/about?tab=dev_path"
+            },
+            {
+                "name":"加入我们",
+                "path":"/about?tab=join_us"
+            },
+            {
+                "name":"联系我们",
+                "path":"/about?tab=contact_us"
+            },
+            {
+                "name":"企业资讯",
+                "path":"/about?tab=conp_news"
+            }
+        ]
     }
 ]

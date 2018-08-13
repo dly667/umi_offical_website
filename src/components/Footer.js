@@ -6,7 +6,7 @@ export default (props) => {
                 <div className={Styles.content}>
                     <div className={Styles.image_box}>
                         <img src={require("./../../public/images/logo.png")} />
-                        <span>焕购</span>
+                        <span>焕链</span>
                     </div>
                     <div className={Styles.book}>
                         <div className={Styles.item}>

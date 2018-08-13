@@ -12,6 +12,14 @@ const map_data = [
     { key: '2', ad: '上海', lng: { center: [121.473701, 31.230416] } },
     { key: '3', ad: '深圳', lng: { center: [114.057868, 22.543099] } },
 ]
+const data = [
+    {key:0,tabIndex:'about_us',tabName:"关于我们"},
+    {key:1,tabIndex:'dev_path',tabName:"发展历程"},
+    {key:2,tabIndex:'join_us',tabName:"加入我们"},
+    {key:3,tabIndex:'contact_us',tabName:"联系我们"},
+    {key:4,tabIndex:'conp_news',tabName:"企业资讯"}
+
+]
 export default class About extends React.Component {
     constructor(props) {
         super(props)
@@ -79,7 +87,7 @@ export default class About extends React.Component {
     about_us = () => {
         return <div className={Styles.about_us_box}>
             <div className={Styles.ins}>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浙江焕购科技有限公司是一家提供高品质网络品牌产品推广服务的精英团队，专注于互联网领域解决方案的发展与创新，
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浙江焕链科技有限公司是一家提供高品质网络品牌产品推广服务的精英团队，专注于互联网领域解决方案的发展与创新，
                             我们已为全国多家知名企业提供了相应的技术解决方案，并树立了良好的口碑，积累了丰富的经验和成功案例，
                             我们来自于国内知名的4A广告公司，软件开发公司，网络游戏研发公司，网络品牌营销公司，我们凭借不同的专业技能，
                             及良好的售后服务质量，亦赢得客户的广泛认可，持续帮助企业实现卓越的业务成果。
@@ -175,7 +183,7 @@ export default class About extends React.Component {
 
                     </ul>
                 </div>
-                <p>如果您对我们的职位感兴趣，请将您的简历发送至 Hr@bubi.cn， 并在邮件标题注明「应聘的职位」。布比团队，期待靠谱的你加入我们！</p>
+                <p>如果您对我们的职位感兴趣，请将您的简历发送至 Hr@bubi.cn， 并在邮件标题注明「应聘的职位」。焕链团队，期待靠谱的你加入我们！</p>
             </div>
 
 
@@ -317,7 +325,7 @@ export default class About extends React.Component {
                         </div>
                     </div>
                     <div className={Styles.content}>
-                        <TabMenu switchTab={this.switchTab} activeTab={this.props.location.query.tab} />
+                        <TabMenu switchTab={this.switchTab} activeTab={this.props.location.query.tab} data={data}/>
                         {this.contentElement()}
                     </div>
                 </div>

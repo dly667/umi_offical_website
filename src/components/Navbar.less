@@ -1,5 +1,4 @@
 .Nbar{
-    height:100px;
     display: flex;
     justify-content:space-between;
     // line-height: 100px;
@@ -28,6 +27,7 @@
     display: flex;
     justify-content: space-between;
     width: 50%;
+    font-size: 16px;
     .menu_activate{
         color: #1bcaea;
         &:first-child{
@@ -43,9 +43,37 @@
             }
         }
     }
-    span{
+    a:-webkit-any-link {
         color: #fff;
     }
+
+    span{
+        color: #fff;
+        height: 100px;
+        line-height: 100px;
+    }
+    div{
+        ul{
+            display: none;
+        }
+        
+    }
+    div.mouser_activate{
+        position: relative;
+        ul{
+            display: block;
+            position: absolute;
+            left: -28%;
+            line-height: 2em;
+            font-size: 15px;
+            background-color: rgba(6,6,6,0.4);
+            width: 102px;
+            text-align: center;
+        }
+    }
+
+
+   
 }
 .login{
     font-size: 14px;

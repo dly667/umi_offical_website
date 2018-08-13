@@ -1,0 +1,44 @@
+.main{
+    position: relative;
+    .imgList{
+        li{
+            display: none;
+        }
+        li.activate{
+            display: block;
+        }
+    }
+   
+    .tab_bar{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        li{
+            height: 20px;
+            width: 20px;
+            background-color: #666;
+            border: 1px aqua solid;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        li.activate{
+            background-color: #1d3;
+        }
+    }
+    img.left{
+        position: absolute;
+        bottom: 42%;
+        left: 4px;
+
+
+    }
+    img.right{
+        position: absolute;
+        bottom: 42%;
+        right: 4px;
+    }
+}
