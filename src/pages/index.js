@@ -64,6 +64,7 @@ export default class Index extends React.Component {
         this.setState({ type: ele.target.getAttribute('index') })
     }
     render() {
+
         let imgList = new Array()
         const liArr = Array();
         for (let i = 1; i <= this.state.imgLen; i++) {
@@ -73,10 +74,22 @@ export default class Index extends React.Component {
                 liArr.push(<a><li index={i} key={i} onClick={this.switch_action}></li></a>)
             }
         }
-        imgList.push(<li className={"carousel-item"}><img onLoad={this.handleImageLoaded.bind(this)} src={require("./../../public/images/index_01.png")} /></li>);
-        imgList.push(<li className={"carousel-item"}><img id="bg_image" src={require("./../../public/images/index_02.png")} /></li>);
-        imgList.push(<li className={"carousel-item"}><img id="bg_image" src={require("./../../public/images/index_03.png")} /></li>);
-        imgList.push(<li className={"carousel-item"}><img id="bg_image" src={require("./../../public/images/index_04.png")} /></li>);
+         //自适应手机
+         const windowWidth = window.innerWidth;
+         let banner_img
+         if (windowWidth <1000){
+            imgList.push(<li className={"carousel-item"}><img onLoad={this.handleImageLoaded.bind(this)} src={require("./../../public/m_images/m_index_01.png")} /></li>);
+            imgList.push(<li className={"carousel-item"}><img id="bg_image" src={require("./../../public/m_images/m_index_02.png")} /></li>);
+            imgList.push(<li className={"carousel-item"}><img id="bg_image" src={require("./../../public/m_images/m_index_03.png")} /></li>);
+            imgList.push(<li className={"carousel-item"}><img id="bg_image" src={require("./../../public/m_images/m_index_04.png")} /></li>);
+         }else{
+            imgList.push(<li className={"carousel-item"}><img onLoad={this.handleImageLoaded.bind(this)} src={require("./../../public/images/index_01.png")} /></li>);
+            imgList.push(<li className={"carousel-item"}><img id="bg_image" src={require("./../../public/images/index_02.png")} /></li>);
+            imgList.push(<li className={"carousel-item"}><img id="bg_image" src={require("./../../public/images/index_03.png")} /></li>);
+            imgList.push(<li className={"carousel-item"}><img id="bg_image" src={require("./../../public/images/index_04.png")} /></li>);
+         }
+        
+
         return (
             <>
                 {/* <div className={Styles[classname]} style={{ height: this.state.imageInfo.height ,position: "relative"}}>

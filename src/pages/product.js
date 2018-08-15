@@ -8,14 +8,21 @@ export default class Product extends React.Component {
             imgLen: 2
         }
     }
+    
 
     render() {
-
-
+        //自适应手机
+        const windowWidth = window.innerWidth;
+        let banner_img
+        if (windowWidth <1000){
+             banner_img = require("./../../public/m_images/m_product_banner.png")
+        }else{
+             banner_img = require("./../../public/images/product_server_banner.png")
+        }
         return (
             <>
                 <div className={Styles.product}>
-                    <div className={Styles.banner}><img src={require("./../../public/images/product_server_banner.png")} /></div>
+                    <div className={Styles.banner}><img src={banner_img} /></div>
                     <div className={Styles.ins_box}>
                         <div className={Styles.ins}>
                             <div className={Styles.title}>焕链区块链网络</div>

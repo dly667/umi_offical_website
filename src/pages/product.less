@@ -1,40 +1,45 @@
-.product{
-    .banner{
-        img{
+
+.product {
+    .banner {
+        img {
+            width: 100%;
+  
+        }
+    }
+    .ins_box {
+        background: url("./../../public/images/product_service_01.png");
         width: 100%;
-    
+        height: 409px;
+        .ins {
+            width: 63.5%;
+            @media (max-width: 980px) {
+                width: 90%;
+            }
+            margin: auto;
+            .title {
+                font-size: 38px;
+                line-height: 238px;
+                display: flex;
+                justify-content: center;
+            }
+            p {
+                font-size: 18px;
+                line-height: 38px;
+            }
         }
     }
-    .ins_box{
-       background: url("./../../public/images/product_service_01.png");
-       width:100%;
-       height: 409px;
-       .ins{
-           width: 63.5%;
-           margin: auto;
-        .title{
-            font-size: 38px;
-            line-height: 238px;
-            display: flex;
-            justify-content: center;
-        
-        }
-        p{
-            font-size: 18px;
-            line-height: 38px;
-        }
-       }
-       
-    }
-    .content{
+    .content {
         margin: auto;
         width: 63.5%;
-        img{
+        @media (max-width: 980px) {
+            width: 90%;
+        }
+        img {
             width: 100%;
             margin-top: 80px;
         }
     }
-    .github{
+    .github {
         width: 100%;
         margin-top: 100px;
     }

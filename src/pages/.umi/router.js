@@ -23,6 +23,11 @@ let routes = [
         "component": require('../about.js').default
       },
       {
+        "path": "/index.html",
+        "exact": true,
+        "component": require('../index.js').default
+      },
+      {
         "path": "/",
         "exact": true,
         "component": require('../index.js').default
@@ -68,7 +73,7 @@ let routes = [
         "component": require('../white_book.js').default
       },
       {
-        "component": () => React.createElement(require('H:/HLOfficialWebsite/node_modules/_umi-build-dev@0.20.5@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', routes: '[{"path":"/","component":"./src\\\\layouts\\\\index.js","routes":[{"path":"/supply_chain_finance","exact":true,"component":"./src/pages/supply_chain_finance.js"},{"path":"/about","exact":true,"component":"./src/pages/about.js"},{"path":"/","exact":true,"component":"./src/pages/index.js"},{"path":"/notarization","exact":true,"component":"./src/pages/notarization.js"},{"path":"/product","exact":true,"component":"./src/pages/product.js"},{"path":"/equity_bond","exact":true,"component":"./src/pages/equity_bond.js"},{"path":"/digital_assets","exact":true,"component":"./src/pages/digital_assets.js"},{"path":"/detail","exact":true,"component":"./src/pages/detail.js"},{"path":"/supply_chain_traceability","exact":true,"component":"./src/pages/supply_chain_traceability.js"},{"path":"/application","exact":true,"component":"./src/pages/application.js"},{"path":"/white_book","exact":true,"component":"./src/pages/white_book.js"}]}]' })
+        "component": () => React.createElement(require('H:/HLOfficialWebsite/node_modules/_umi-build-dev@0.20.5@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', routes: '[{"path":"/","component":"./src\\\\layouts\\\\index.js","routes":[{"path":"/supply_chain_finance","exact":true,"component":"./src/pages/supply_chain_finance.js"},{"path":"/about","exact":true,"component":"./src/pages/about.js"},{"path":"/index.html","exact":true,"component":"./src/pages/index.js"},{"path":"/","exact":true,"component":"./src/pages/index.js"},{"path":"/notarization","exact":true,"component":"./src/pages/notarization.js"},{"path":"/product","exact":true,"component":"./src/pages/product.js"},{"path":"/equity_bond","exact":true,"component":"./src/pages/equity_bond.js"},{"path":"/digital_assets","exact":true,"component":"./src/pages/digital_assets.js"},{"path":"/detail","exact":true,"component":"./src/pages/detail.js"},{"path":"/supply_chain_traceability","exact":true,"component":"./src/pages/supply_chain_traceability.js"},{"path":"/application","exact":true,"component":"./src/pages/application.js"},{"path":"/white_book","exact":true,"component":"./src/pages/white_book.js"}]}]' })
       }
     ]
   }

@@ -67,7 +67,7 @@ export default class About extends React.Component {
                 return <li key={item.key} dataindex={item.key} className={Styles.active} >{item.ad}</li>
             } else {
 
-                return <li key={item.key} dataindex={item.key} onMouseOver={this.switchMap.bind(this, index)}>{item.ad}</li>
+                return <li key={item.key} dataindex={item.key} onMouseOver={this.switchMap.bind(this, index)} onClick={this.switchMap.bind(this, index)}>{item.ad}</li>
             }
 
         })

@@ -2,28 +2,41 @@
     width: 100%;
     .banner {
         height: calc(100vw/1920*560);
-       
-      
-            background: url("./../../public/images/supply_chain_finance/banner.png");
+        background: url("./../../public/images/supply_chain_finance/banner.png");
+        background-size: contain;
+        @media (max-width: 980px) {
+            height: calc(100vw/980*(980/1200)*600);
+            background: url("./../../public/m_images/m_supply_chain_finance_banner.png");
             background-size: contain;
-        
+        }
     }
-    img.solution{
-      
+    img.solution {
         margin: 84px auto 100px auto;
         display: block;
+        @media (max-width: 980px) {
+            width: 90%;
+        }
     }
-    img.three{
+    img.three {
         width: 100%
     }
     .content {
-        img{
+        img {
             margin: 84px auto 14px auto;
             display: block;
+        }
+        li {
+            img {
+                @media (max-width: 980px) {
+                    width: 100%;
+                }
+            }
         }
         width: 63.5%;
         margin: auto;
         margin-bottom: 100px;
+        @media (max-width: 980px) {
+            width: 90%;
+        }
     }
-
 }

@@ -15,7 +15,7 @@
     },
     {
         "name":"应用场景",
-        "path":"/application",
+        "path":"scenes",
         "child":[
             {
                 "name":"数字资产",
@@ -43,7 +43,7 @@
     },
     {
         "name":"产品白皮书",
-        "path":"/white_book",
+        "path":"",
         "child":[
             
         ]
