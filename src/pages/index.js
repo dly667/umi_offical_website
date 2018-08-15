@@ -76,8 +76,10 @@ export default class Index extends React.Component {
         }
          //自适应手机
          const windowWidth = window.innerWidth;
+         console.log(windowWidth,999)
          let banner_img
          if (windowWidth <1000){
+
             imgList.push(<li className={"carousel-item"}><img onLoad={this.handleImageLoaded.bind(this)} src={require("./../../public/m_images/m_index_01.png")} /></li>);
             imgList.push(<li className={"carousel-item"}><img id="bg_image" src={require("./../../public/m_images/m_index_02.png")} /></li>);
             imgList.push(<li className={"carousel-item"}><img id="bg_image" src={require("./../../public/m_images/m_index_03.png")} /></li>);

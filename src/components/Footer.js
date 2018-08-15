@@ -59,7 +59,8 @@ export default (props) => {
                     <div className={Styles.hr}></div>
 
 
-                    <p className={Styles.copyright}>Copyright © 2016 焕链（浙江）网络技术有限公司 | 京ICP备15052630</p>
+                    <p className={Styles.copyright}>Copyright © 2016 浙江焕链科技有限公司、浙江焕购科技有限公司 | 浙ICP备18028852号-1</p>
+                    <p className={Styles.copyright2}>浙江焕购科技有限公司</p>
                 </div>
             </div>
         </>
