@@ -16,7 +16,8 @@ export default class Navbar extends React.Component {
     console.log('click ', e);
     this.setState({
       current: e.key,
-      mouser: ''
+      mouser: '',
+
     });
   }
 
@@ -62,9 +63,10 @@ export default class Navbar extends React.Component {
             
           }
         }}
-        className={this.state.mouser == idx ? Styles.mouser_activate : ''}>
+        className={(this.state.mouser == idx && (idx==2||idx==4)? Styles.mouser_activate : '') +' '+ Styles.menu_test }>
      
-          <span className={(pathname == v.path || v.path == 'scenes' && ['/digital_assets','/equity_bond','/supply_chain_finance','/notarization','/supply_chain_traceability'].indexOf(pathname)>-1)? Styles.menu_activate : ''}>{v.name}
+          <span className={
+          (pathname == v.path || v.path == 'scenes' && ['/digital_assets','/equity_bond','/supply_chain_finance','/notarization','/supply_chain_traceability'].indexOf(pathname)>-1)? Styles.menu_activate : ''}>{v.name}
           </span>
         <ul >
           {liArr ? liArr : ''}

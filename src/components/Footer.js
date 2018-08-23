@@ -1,4 +1,7 @@
+import router from 'umi/router'
 import Styles from './Footer.less'
+import menuList from './../../public/menu.json'
+
 export default (props) => {
     return (
         <>
@@ -13,32 +16,33 @@ export default (props) => {
                             <p>产品服务</p>
                             <div className={Styles.book_hr}></div>
                             <ul>
-                                <li>区块链浏览器</li>
-                                <li>健康监控</li>
-                                <li>数据分析</li>
-                                <li>电子合同</li>
+                                <li onClick={()=>router.push(menuList[1].path)}>区块链浏览器</li>
+                                <li onClick={()=>router.push(menuList[1].path)}>健康监控</li>
+                                <li onClick={()=>router.push(menuList[1].path)}>数据分析</li>
+                                <li onClick={()=>router.push(menuList[1].path)}>电子合同</li>
+                                
                             </ul>
                         </div>
                         <div  className={Styles.item}>
                             <p>应用场景</p>
                             <div className={Styles.book_hr}></div>
                             <ul>
-                                <li>数字资产</li>
-                                <li>供应链金融</li>
-                                <li>股权债权</li>
-                                <li>供应链溯源</li>
-                                <li>公示公证</li>
+                                <li onClick={()=>router.push(menuList[2].child[0].path)}>数字资产</li>
+                                <li onClick={()=>router.push(menuList[2].child[1].path)}>供应链金融</li>
+                                <li onClick={()=>router.push(menuList[2].child[2].path)}>股权债权</li>
+                                <li onClick={()=>router.push(menuList[2].child[3].path)}>供应链溯源</li>
+                                <li onClick={()=>router.push(menuList[2].child[4].path)}>公示公证</li>
                             </ul>
                         </div>
                         <div  className={Styles.item}>
                             <p>关于焕链</p>
                             <div className={Styles.book_hr}></div>
                             <ul>
-                                <li>关于我们</li>
-                                <li>发展历程</li>
-                                <li>加入我们</li>
-                                <li>联系我们</li>
-                                <li>企业资讯</li>
+                                <li onClick={()=>router.push(menuList[4].child[0].path)}>关于我们</li>
+                                <li onClick={()=>router.push(menuList[4].child[1].path)}>发展历程</li>
+                                <li onClick={()=>router.push(menuList[4].child[2].path)}>加入我们</li>
+                                <li onClick={()=>router.push(menuList[4].child[3].path)}>联系我们</li>
+                                <li onClick={()=>router.push(menuList[4].child[4].path)}>企业资讯</li>
                             </ul>
                         </div>
                         <div  className={Styles.item}>

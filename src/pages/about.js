@@ -183,7 +183,7 @@ export default class About extends React.Component {
 
                     </ul>
                 </div>
-                <p>如果您对我们的职位感兴趣，请将您的简历发送至 Hr@bubi.cn， 并在邮件标题注明「应聘的职位」。焕链团队，期待靠谱的你加入我们！</p>
+                <p>如果您对我们的职位感兴趣，请将您的简历发送至 Hr@huanlian.cn， 并在邮件标题注明「应聘的职位」。焕链团队，期待靠谱的你加入我们！</p>
             </div>
 
 

@@ -74,23 +74,23 @@ export default class Index extends React.Component {
                 liArr.push(<a><li index={i} key={i} onClick={this.switch_action}></li></a>)
             }
         }
-         //自适应手机
-         const windowWidth = window.innerWidth;
-         console.log(windowWidth,999)
-         let banner_img
-         if (windowWidth <1000){
+        //自适应手机
+        const windowWidth = window.innerWidth;
+        console.log(windowWidth, 999)
+        let banner_img
+        if (windowWidth < 1000) {
 
             imgList.push(<li className={"carousel-item"}><img onLoad={this.handleImageLoaded.bind(this)} src={require("./../../public/m_images/m_index_01.png")} /></li>);
             imgList.push(<li className={"carousel-item"}><img id="bg_image" src={require("./../../public/m_images/m_index_02.png")} /></li>);
             imgList.push(<li className={"carousel-item"}><img id="bg_image" src={require("./../../public/m_images/m_index_03.png")} /></li>);
             imgList.push(<li className={"carousel-item"}><img id="bg_image" src={require("./../../public/m_images/m_index_04.png")} /></li>);
-         }else{
+        } else {
             imgList.push(<li className={"carousel-item"}><img onLoad={this.handleImageLoaded.bind(this)} src={require("./../../public/images/index_01.png")} /></li>);
             imgList.push(<li className={"carousel-item"}><img id="bg_image" src={require("./../../public/images/index_02.png")} /></li>);
             imgList.push(<li className={"carousel-item"}><img id="bg_image" src={require("./../../public/images/index_03.png")} /></li>);
             imgList.push(<li className={"carousel-item"}><img id="bg_image" src={require("./../../public/images/index_04.png")} /></li>);
-         }
-        
+        }
+
 
         return (
             <>
@@ -104,12 +104,12 @@ export default class Index extends React.Component {
                   
 
                 </div> */}
-                <div style={{ height: this.state.imageInfo.height ,position: "relative"}}>
-                <div className={"ft-carousel"} ref={carou2 => this.carou2 = carou2}>
-                    <ul className="carousel-inner">
-                        {imgList}
-                    </ul>
-                </div>
+                <div style={{ height: this.state.imageInfo.height, position: "relative" }}>
+                    <div className={"ft-carousel"} ref={carou2 => this.carou2 = carou2}>
+                        <ul className="carousel-inner">
+                            {imgList}
+                        </ul>
+                    </div>
                 </div>
                 <div className={Styles.net}>
                     <img src={require("./../../public/images/img01.png")} />
@@ -134,29 +134,53 @@ export default class Index extends React.Component {
                                 <div className={Styles.hr}></div>
                                 <p className={Styles.big_font}>供应链金融</p>
                                 <p className={Styles.english}>Supply chain finance</p>
+
+                                <p className={Styles.detail}>焕链区块链已应用于仓单质押融资、应收账款融资、票据托管贴现、消费金融理财、大宗商品交易等场景。</p>
+                                <span >查看更多</span>
+
                             </li>
                             <li >
                                 <img src={require("./../../public/images/discount.png")} />
                                 <div className={Styles.hr}></div>
                                 <p className={Styles.big_font}>股权债权</p>
                                 <p className={Styles.english}>Equity claims</p>
+                                <p className={Styles.detail}>焕链区块链已应用于众筹平台，区域股权交易中心，区域金融资产交易中心，私募管理平台。</p>
+                                <span >查看更多</span>
                             </li>
                             <li >
                                 <img src={require("./../../public/images/cloud-computing.png")} />
                                 <div className={Styles.hr}></div>
                                 <p className={Styles.big_font}>供应链溯源</p>
                                 <p className={Styles.english}>Supply chain traceability</p>
+                                <p className={Styles.detail}>焕链区块链已应用于食品、药品、消费品、艺术品等领域。</p>
+                                <span >查看更多</span>
                             </li>
                             <li >
                                 <img src={require("./../../public/images/icon_01.png")} />
                                 <div className={Styles.hr}></div>
                                 <p className={Styles.big_font}>公示公证</p>
                                 <p className={Styles.english}>The public notary</p>
+                                <p className={Styles.detail}>焕链区块链已应用于慈善公益、养老扶贫、互助保险、网贷众筹等场景。</p>
+                                <span >查看更多</span>
                             </li>
 
                         </ul>
                     </div>
                 </div>
+
+                <div className={Styles.ani_car}>
+                    <p><span>技术优势</span></p>
+                    <div className={Styles.content}>
+                        <ul>
+                            <li ></li>
+                            <li className={Styles.activate}></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div className={Styles.more_application_sense}>
                     <div className={Styles.content}>
                         <p><span>查看产品白皮书</span></p>
