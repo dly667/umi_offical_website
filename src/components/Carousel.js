@@ -42,7 +42,7 @@ export default class Carousel extends React.Component {
         }
     }
     render() {
-        console.log(this.state.activate,this.props.imgData.length)
+        
         if(this.state.activate>this.props.imgData.length){
             this.setState({activate:1})
             console.log('aa')
