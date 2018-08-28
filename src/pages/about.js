@@ -13,11 +13,11 @@ const map_data = [
     { key: '3', ad: '深圳', lng: { center: [114.057868, 22.543099] } },
 ]
 const data = [
-    {key:0,tabIndex:'about_us',tabName:"关于我们"},
-    {key:1,tabIndex:'dev_path',tabName:"发展历程"},
-    {key:2,tabIndex:'join_us',tabName:"加入我们"},
-    {key:3,tabIndex:'contact_us',tabName:"联系我们"},
-    {key:4,tabIndex:'conp_news',tabName:"企业资讯"}
+    { key: 0, tabIndex: 'about_us', tabName: "关于我们" },
+    { key: 1, tabIndex: 'dev_path', tabName: "发展历程" },
+    { key: 2, tabIndex: 'join_us', tabName: "加入我们" },
+    { key: 3, tabIndex: 'contact_us', tabName: "联系我们" },
+    { key: 4, tabIndex: 'conp_news', tabName: "企业资讯" }
 
 ]
 export default class About extends React.Component {
@@ -32,6 +32,9 @@ export default class About extends React.Component {
             },
             about_banner: {
                 active: ''
+            },
+            company_culture:{
+                active:1
             }
         }
 
@@ -40,12 +43,22 @@ export default class About extends React.Component {
 
 
     componentDidMount() {
-
+        this.timer = this.timer_func();
     }
     componentDidUpdate() {
         // this.creatMap()
     }
-
+    timer_func = ()=>{
+        let value
+        return setInterval(()=>{
+            if (this.state.company_culture.active>=4){
+                value = 1
+            }else{
+                value = this.state.company_culture.active+1
+            }
+            this.setState({company_culture:{active:value}})
+        },2000)
+    }
     switchMap = (index) => {
 
         this.setState({
@@ -98,16 +111,39 @@ export default class About extends React.Component {
             <img src={require("./../../public/images/about_us_02.png")} />
             <img src={require("./../../public/images/about_us_03.png")} />
             <div className={Styles.company_culture}>
-                <img src={require("./../../public/images/about_us_04.png")} />
+                <img className={Styles.left} src={require("./../../public/images/about/left.png")} />
+                <div className={Styles.box} onMouseOver={()=>clearInterval(this.timer)} onMouseOut={()=>this.timer = this.timer_func()}>
+                    <div className={Styles.page}>
+                        <ul>
+                            <li onClick={()=>this.setState({company_culture:{active:1}})} className={this.state.company_culture.active==1? Styles.activate:''}>01</li>
+                            <li onClick={()=>this.setState({company_culture:{active:2}})} className={this.state.company_culture.active==2? Styles.activate:''} >02</li>
+                            <li onClick={()=>this.setState({company_culture:{active:3}})} className={this.state.company_culture.active==3? Styles.activate:''}>03</li>
+                            <li onClick={()=>this.setState({company_culture:{active:4}})} className={this.state.company_culture.active==4? Styles.activate:''}>04</li>
+                            
+                            {/* <li className={Styles.li04}><img src={require("./../../public/images/about/page.png")} /></li> */}
+
+                        </ul>
+                    </div>
+                    <div className={Styles.carousel}>
+                        <img className={this.state.company_culture.active==1? Styles.show:Styles.hide} src={require("./../../public/images/about/about_us_a01.png")} />
+                        <img className={this.state.company_culture.active==2? Styles.show:Styles.hide} src={require("./../../public/images/about/about_us_a02.png")} />
+                        <img className={this.state.company_culture.active==3? Styles.show:Styles.hide} src={require("./../../public/images/about/about_us_a03.png")} />
+                        <img className={this.state.company_culture.active==4? Styles.show:Styles.hide} src={require("./../../public/images/about/about_us_a04.png")} />
+                    </div>
+
+                </div>
+                <img className={Styles.right} src={require("./../../public/images/about/right.png")} />
 
             </div>
 
-
         </div>
+
+
+
     }
     development_path = () => {
         return <div className={Styles.about_dev_path}>
-            <img src={require("./../../public/images/about_dev_path.png")} />
+            <img src={require("./../../public/images/about/dev_path.png")} />
         </div>
     }
     join_us = () => {
@@ -325,7 +361,7 @@ export default class About extends React.Component {
                         </div>
                     </div>
                     <div className={Styles.content}>
-                        <TabMenu switchTab={this.switchTab} activeTab={this.props.location.query.tab} data={data}/>
+                        <TabMenu switchTab={this.switchTab} activeTab={this.props.location.query.tab} data={data} />
                         {this.contentElement()}
                     </div>
                 </div>

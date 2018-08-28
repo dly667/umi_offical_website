@@ -2,7 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 835px;
+    // height: 835px;
+    margin: calc(100vw/1920*90) 0px;
     img {
         @media (max-width: 980px) {
             width: 90%
@@ -38,10 +39,10 @@ p {
                 justify-content: center;
                 flex-direction: column;
                 height: calc(100vw / 1920 * 230*2);
-                width: 230px;
+              
                 width: calc(100vw / 1920 * 230);
                 background-color: rgba(0, 0, 0, 0.3);
-                margin: 0 10px;
+                margin: 0 calc(100vw/1920*10);;
                 color: #fff;
                 .hr {
                     border-bottom: 2px solid #5853ce;
@@ -62,6 +63,10 @@ p {
                 }
                 span {
                     display: none;
+                    cursor: pointer;
+                }
+                img{
+
                 }
             }
         }
@@ -71,24 +76,28 @@ p {
                 display: none;
             }
             .big_font {
-                margin-top: 25px;
+                margin-top: calc(100vw / 1920 * 25);;
             }
             .english {
-                margin-bottom: 15px;
+                margin-bottom: calc(100vw / 1920 * 15);;
             }
             p.detail {
-                font-size: 14px;
-                line-height: 28px;
-                letter-spacing: 2px;
+                font-size: calc(100vw / 1920 * 14);;
+                line-height: calc(100vw / 1920 * 28);;
+                letter-spacing: calc(100vw / 1920 * 2);;
                 display: block;
                 height: calc(100vw / 1920 * 100);
-                width: 200px;
-                height: 125px;
+                
+                width: calc(100vw / 1920 * 200);
+                height: calc(100vw / 1920 * 125);;
             }
             span {
                 display: block;
                 border: 1px solid #fff;
-                padding: 5px 30px;
+                padding: 5px calc(100vw / 1920 * 30);;
+            }
+            img{
+                height: calc(100vw / 1920 * 64);
             }
         }
     }
@@ -99,36 +108,64 @@ p {
         display: flex;
         justify-content: center;
         span {
-            font-size: 38px;
-            width: 193px;
-            height: 66px;
+            font-size: calc(100vw/1920*38);;
+            width: calc(100vw/1920*193);;
+            height: calc(100vw/1920*66);;
             background: url("./../../public/images/index/title_bg.png");
             text-align: center;
-            margin-top: 70px;
-            margin-bottom: 85px;
+            margin-top: calc(100vw/1920*70);;
+            margin-bottom: calc(100vw/1920*85);;
         }
     } 
 
     .content {
-        height: 470px;
+        height: calc(100vw/1920*470);;
         background: url("./../../public/images/index/index10.png");
         background-repeat: no-repeat;
         background-position: bottom;
+        background-size:contain;
         width: 100%;
+        position: relative;
+        .ins{
+            position: absolute;
+            left: 50%;
+            display: flex;
+            flex-direction: column;
+            div{
+                border-bottom: 3px slateblue solid;
+                width: calc(100vw/1920*28);;
+                margin: calc(100vw/1920*10) 0;
+            }
+            align-items: baseline;
+            p{
+                line-height: calc(100vw/1920*36);;
+            }
+            p:first-child{
+                font-size: calc(100vw/1920*28);;
+            }
+            p:not(:first-child){
+                font-size: calc(100vw/1920*18);;
+            }
+        }
         ul{
             display: flex;
             justify-content: center;
             flex-direction: row;
             align-items: flex-end;
             li{
-                height: 167px;
-                width: 167px;
+                height: calc(100vw/1920*167);;
+                width: calc(100vw/1920*167);;
                 background: #fff;
-                margin-right: 13px;
+                margin-right: calc(100vw/1920*13);;
+                box-shadow: 0 calc(100vw/1920*-13) calc(100vw/1920*9) #f7f7ff;
+                text-align: center;
+                line-height: calc(100vw/1920*167);;
             }
             li.activate{
-                height: 376px;
-                width: 300px;
+                height: calc(100vw/1920*376);;
+                width: calc(100vw/1920*300);;
+                background: url("./../../public/images/index/connection_act.png");
+                background-size: contain;
             }
         }
     }
@@ -151,21 +188,27 @@ p {
                     height: calc(100vw/1920*70);
                 } // padding: 11px 23px;
                 border: 1px solid #5853ce;
-                font-size: 20px;
+                font-size: calc(100vw/1920*20);
                 text-align: center;
-                line-height: 40px;
+                line-height: calc(100vw/1920*40);
             }
         }
     }
 }
 
 .partner {
+    margin: auto;
+    margin-top:calc(100vw/1920*60);
+    margin-bottom: calc(100vw/1920*50);
     width: 63%;
+
     @media (max-width: 980px) {
         width: 90%;
     }
-    margin: auto;
-    margin-top:60px;
+    @media (max-width: 1400px  ) and (min-width:980px) {
+        width: 87.5%
+    }
+    
     img {
         margin: auto;
         display: block;
@@ -178,11 +221,11 @@ p {
         .third_part {
             display: flex;
             justify-content: space-between;
-            margin-top: 15px;
+            margin-top: calc(100vw/1920*15);
         }
         li {
-            width: 288px;
-            height: 138px;
+            width: calc(100vw/1920*288);
+            height: calc(100vw/1920*138);
             background-color: antiquewhite;
             display: flex;
             justify-content: center;
@@ -193,15 +236,15 @@ p {
         }
     }
     .switch_btn {
-        height: 30px;
-        width: 44px;
+        height: calc(100vw/1920*30);
+        width: calc(100vw/1920*44);
         display: flex;
         justify-content: space-between;
         margin: auto;
-        margin-top: 30px;
+        margin-top: calc(100vw/1920*30);
         li {
-            width: 11px;
-            height: 11px;
+            width: calc(100vw/1920*11);
+            height: calc(100vw/1920*11);
             border: 1px solid;
             border-radius: 50%;
             background-color: #777;

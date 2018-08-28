@@ -3,9 +3,14 @@
     .imgList {
         li {
             display: none;
+            opacity: 0;
+            transition: all 2s;
+           
         }
         li.activate {
+            opacity: 1;
             display: block;
+           
         }
     }
     .tab_bar {
@@ -30,7 +35,8 @@
     }
     img.left {
         position: absolute;
-        bottom: 42%;
+        bottom: 50%;
+        transform:translateY(50%);
         left: 4px;
         @media (max-width: 980px) {
             bottom: 34%;
@@ -40,7 +46,8 @@
     }
     img.right {
         position: absolute;
-        bottom: 42%;
+        bottom: 50%;
+        transform:translateY(50%);
         right: 4px;
         @media (max-width: 980px) {
             bottom: 34%;

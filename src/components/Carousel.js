@@ -12,7 +12,7 @@ export default class Carousel extends React.Component {
     imgList = ()=>{
         const li = this.props.imgData.map((img_name,idx)=>{
             
-            return <li className={this.state.activate-1==idx?Styles.activate:''}><img src={require("./../../public/images/"+img_name)}/></li>
+            return <li className={this.state.activate-1==idx?Styles.activate:''}><img style={{width:"100%"}}src={require("./../../public/images/"+img_name)}/></li>
         })
         return li
     }

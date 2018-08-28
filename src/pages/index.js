@@ -1,4 +1,5 @@
 import React from 'react'
+import router from 'umi/router'
 import Styles from './index.less'
 export default class Index extends React.Component {
     constructor(props) {
@@ -9,7 +10,8 @@ export default class Index extends React.Component {
             imageStatus: '',
             imageInfo: {
                 height: ''
-            }
+            },
+            ani_cur: 1,//动画切换之大总管变量
         }
     }
     componentDidMount() {
@@ -62,6 +64,25 @@ export default class Index extends React.Component {
     }
     switch_action = (ele) => {
         this.setState({ type: ele.target.getAttribute('index') })
+    }
+
+    //动画切换之技术优势
+    ani_car_func = () => {
+        const arrLi = [
+            <li className={0 == this.state.ani_cur ? Styles.activate : ''}><img src={require("./../../public/images/index/rocket.png")} /></li>,
+            <li className={1 == this.state.ani_cur ? Styles.activate : ''}></li>,//<img src={require("./../../public/images/index/connection.png")} />
+            <li className={2 == this.state.ani_cur ? Styles.activate : ''}><img src={require("./../../public/images/index/time-management.png")} /></li>,
+            <li className={3 == this.state.ani_cur ? Styles.activate : ''}><img src={require("./../../public/images/index/lock.png")} /></li>,
+            <li className={4 == this.state.ani_cur ? Styles.activate : ''}><img src={require("./../../public/images/index/smart-tv.png")} /></li>,
+            <li className={5 == this.state.ani_cur ? Styles.activate : ''}><img src={require("./../../public/images/index/bitcoin.png")} /></li>
+        ]
+
+        return arrLi.map((item, index, arr) => {
+
+            return item
+        })
+
+
     }
     render() {
 
@@ -119,13 +140,13 @@ export default class Index extends React.Component {
 
                     <div className={Styles.background_01}>
                         <ul>
-                            <li className={Styles.active}>
+                            <li >
                                 <img src={require("./../../public/images/wallet.png")} />
                                 <div className={Styles.hr}></div>
                                 <p className={Styles.big_font}>数字资产</p>
                                 <p className={Styles.english}>Digital assets</p>
                                 <p className={Styles.detail}>焕链区块链已应用于商业积分、电子券、预付卡、 游戏装备、保险卡单、证券化资产等场景。</p>
-                                <span >查看更多</span>
+                                <span onClick={()=>router.push('digital_assets')}>查看更多</span>
 
 
                             </li>
@@ -136,7 +157,7 @@ export default class Index extends React.Component {
                                 <p className={Styles.english}>Supply chain finance</p>
 
                                 <p className={Styles.detail}>焕链区块链已应用于仓单质押融资、应收账款融资、票据托管贴现、消费金融理财、大宗商品交易等场景。</p>
-                                <span >查看更多</span>
+                                <span onClick={()=>router.push('supply_chain_finance')}>查看更多</span>
 
                             </li>
                             <li >
@@ -145,7 +166,7 @@ export default class Index extends React.Component {
                                 <p className={Styles.big_font}>股权债权</p>
                                 <p className={Styles.english}>Equity claims</p>
                                 <p className={Styles.detail}>焕链区块链已应用于众筹平台，区域股权交易中心，区域金融资产交易中心，私募管理平台。</p>
-                                <span >查看更多</span>
+                                <span onClick={()=>router.push('equity_bond')}>查看更多</span>
                             </li>
                             <li >
                                 <img src={require("./../../public/images/cloud-computing.png")} />
@@ -153,7 +174,7 @@ export default class Index extends React.Component {
                                 <p className={Styles.big_font}>供应链溯源</p>
                                 <p className={Styles.english}>Supply chain traceability</p>
                                 <p className={Styles.detail}>焕链区块链已应用于食品、药品、消费品、艺术品等领域。</p>
-                                <span >查看更多</span>
+                                <span onClick={()=>router.push('supply_chain_traceability')}>查看更多</span>
                             </li>
                             <li >
                                 <img src={require("./../../public/images/icon_01.png")} />
@@ -161,7 +182,7 @@ export default class Index extends React.Component {
                                 <p className={Styles.big_font}>公示公证</p>
                                 <p className={Styles.english}>The public notary</p>
                                 <p className={Styles.detail}>焕链区块链已应用于慈善公益、养老扶贫、互助保险、网贷众筹等场景。</p>
-                                <span >查看更多</span>
+                                <span  onClick={()=>router.push('notarization')}>查看更多</span>
                             </li>
 
                         </ul>
@@ -171,12 +192,16 @@ export default class Index extends React.Component {
                 <div className={Styles.ani_car}>
                     <p><span>技术优势</span></p>
                     <div className={Styles.content}>
+                        <div className={Styles.ins}>
+                            <p>海量用户支撑</p>
+                            <div></div>
+                            <p>高效交易验证和同步</p>
+                            <p>支撑千万甚至以及用户规模</p>
+                            
+                        </div>
+
                         <ul>
-                            <li ></li>
-                            <li className={Styles.activate}></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            {this.ani_car_func()}
                         </ul>
                     </div>
                 </div>

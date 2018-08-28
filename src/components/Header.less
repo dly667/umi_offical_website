@@ -1,49 +1,3 @@
-// .header{
-
-// }
-
-// .box_01{
-//     background:  url('./../../public/images/bg01.png') no-repeat  top;
-//     background-size:100% ;
-//     // height:100vw*800/1920
-//     height: 100vh;
-//     position: relative;
-//     .slogan{
-//         height: 150px;
-//         background:url("./../../public/images/block.png") no-repeat;
-//         position: relative;
-//         top:157px;
-//     }
-// }
-
-
-// .header_product{
-//     background:  url('./../../public/images/product.png') no-repeat  top;
-//     background-size:100% ;
-//     // height:100vw*800/1920
-//     height: 100vh;
-//     position: relative;
-// }
-// .header_about{
-//     // background:  url('./../../public/images/about.png') no-repeat  top;
-//     // background-size:100% ;
-//     // // height:100vw*800/1920
-//     // height: 100vh;
-//     // position: relative;
-//     img{
-//         position: absolute;
-//         top:0;
-//         z-index: -1;
-//     }
-
-// }
-// .header_application{
-//     background:  url('./../../public/images/application.png') no-repeat  top;
-//     background-size:100% ;
-//     // height:100vw*800/1920
-//     height: 100vh;
-//     position: relative;
-// }
 .content{
     width: 63.5vw;
     // height: 50%;
@@ -101,7 +55,7 @@
 .ft_carousel .carousel_indicators {
 	position: absolute;
 	left: 0;
-	bottom: 10px;
+	bottom: calc(100vw/1920*10);
 	width: 100%;
 	text-align: center;
 	font-size: 0;
@@ -109,10 +63,10 @@
 
 .ft_carousel .carousel_indicators span {
 	display: inline-block;
-	width: 12px;
-	height:1px;
+	width: calc(100vw/1920*12);
+	height:calc(100vw/1920*1);
 	/* background-color: #fff; */
-	margin: 0 4px;
+	margin: 0 calc(100vw/1920*4);
 	/* border-radius: 50%; */
 	cursor: pointer;
 	border-bottom: 2px #fff solid;
@@ -121,10 +75,10 @@
 
 .ft_carousel .carousel_indicators span.active {
 	display: inline-block;
-	width: 7px;
-	height: 7px;
+	width: calc(100vw/1920*7);
+	height: calc(100vw/1920*7);
 	/* background-color: #fff; */
-	margin: -3px 4px;
+	margin: calc(100vw/1920*-3) calc(100vw/1920*4);
 	border-radius: 50%;
 	cursor: pointer;
 	border: 1px #fff solid;
@@ -137,9 +91,9 @@
 .ft_carousel .carousel_btn {
 	position: absolute;
 	top: 50%;
-	width: 50px;
-	height: 45px;
-	margin-top: -25px;
+	width: calc(100vw/1920*50);
+	height: calc(100vw/1920*45);
+	margin-top: calc(100vw/1920*-25);
 	cursor: pointer;
 }
 
